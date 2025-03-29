@@ -7,6 +7,7 @@ import com.springsecurity.examnames.model.Exam;
 import com.springsecurity.examnames.repository.ExamRepository;
 import com.springsecurity.examnames.service.ExamService;
 import com.springsecurity.user.exception.UserException;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -47,6 +48,7 @@ public class ExamServiceImp implements ExamService {
         return examRepository.save(updateExam);
     }
 
+    @Transactional
     @Override
     public void deleteExam(Long examId) throws UserException {
         Exam deleteExam = examRepository.findById(examId).orElse(null);
