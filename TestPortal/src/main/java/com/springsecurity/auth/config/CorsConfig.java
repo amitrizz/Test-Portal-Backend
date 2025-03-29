@@ -16,7 +16,7 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**") // Allow all endpoints
-                        .allowedOrigins("https://practice-exam-portal-165510053390.asia-south2.run.app",
+                        .allowedOrigins("https://examportal-frontend-165510053390.asia-south2.run.app",
                                 "http://localhost:3000") // Allow frontend origin
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Allow HTTP methods
                         .allowedHeaders("*") // Allow all headers
