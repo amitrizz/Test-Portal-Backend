@@ -30,8 +30,8 @@ public class ExamSetServiceImp implements ExamSetService {
         }
         examSet1.setExamId(examSet.getExamId());
         examSet1.setExamSetName(examSet1.getExamSetName());
-        examSet.setCreatedAt(LocalDateTime.now());
-        examSet.setIsAttempted(examSet.getIsAttempted());
+        examSet1.setCreatedAt(LocalDateTime.now());
+        examSet1.setIsAttempted(examSet.getIsAttempted());
         return examSetRepository.save(examSet1);
     }
 
