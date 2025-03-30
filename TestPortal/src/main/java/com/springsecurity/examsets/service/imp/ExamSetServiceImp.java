@@ -28,8 +28,11 @@ public class ExamSetServiceImp implements ExamSetService {
         if (examSet1==null || !examSet1.getExamId().equals(examSet.getExamId())){
             throw new UserException("ExamSet Not Found or ExamName Not Match");
         }
+        examSet1.setExamId(examSet.getExamId());
+        examSet1.setExamSetName(examSet1.getExamSetName());
         examSet.setCreatedAt(LocalDateTime.now());
-        return examSetRepository.save(examSet);
+        examSet.setIsAttempted(examSet.getIsAttempted());
+        return examSetRepository.save(examSet1);
     }
 
     @Override
